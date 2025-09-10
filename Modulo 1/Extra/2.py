@@ -1,25 +1,18 @@
-qtd = int (input('quantos numeros voce vai digitar'))
-           
-positivos = 0
-negativos = 0
-zeros = 0
+def dividir ():
+    try:
+        a= int(input('digite o valor de a:'))
+        b= int(input('digite o valor de b:'))
 
-for i in range(qtd):
-    n = int(input(f'digite o {i + 1}° numero: '))
+        if b == 0:
+          print ('erro: divisao por zero não é permitida')
+          return None
+    
+        resultado = a / b 
+        print(f'o resultado de {a} dividido por {b} é: {resultado}')
 
-    if n > 0:
-        print (f'{n} é positivo')
-        negativos += 1
+    
+    except ValueError:
+        print('erro, tente novamente')
 
-    elif n < 0:
-        print (f'{n}é zeros')
-        zeros += 1
-
-else:
-   print(f'{n} é negativo')
-   zeros += 1
-
-   print ('\nRelatorio:')
-   print (f'positivos: {positivos}')
-   print (f'negativos: {negativos}')
-   print (f'zeros: {zeros}')
+dividir()
+  
