@@ -1,6 +1,8 @@
-nome = input ('digite o nome:')
-email= input ('digite o email')
+try:
+  with open('arquivo.txt', 'r') as arquivo:
+    conteudo = arquivo.read()
+    print(conteudo)
 
-arquivo = open ('pessoa.txt', 'a')
-arquivo.write (nome + ' | ' +email + '\n') 
-arquivo.close()
+except FileNotFoundError:
+ with open ('arquivo.txt', 'w' ) as arquivo:
+  arquivo.write('arquivo criado')

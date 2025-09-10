@@ -1,18 +1,14 @@
-def dividir ():
-    try:
-        a= int(input('digite o valor de a:'))
-        b= int(input('digite o valor de b:'))
+nome = input('digite o nome:')
+telefone = input ('digite o telefone:')
+email = input ('digite o email')
 
-        if b == 0:
-          print ('erro: divisao por zero não é permitida')
-          return None
-    
-        resultado = a / b 
-        print(f'o resultado de {a} dividido por {b} é: {resultado}')
+arquivo= open('contatos.txt', 'a')
+arquivo.write (f'{nome}, {telefone}, {email}\n')
+arquivo.close()
 
-    
-    except ValueError:
-        print('erro, tente novamente')
+conteudo =  open('contatos.txt','r')
 
-dividir()
-  
+print(conteudo.read())
+
+conteudo.close()
+
